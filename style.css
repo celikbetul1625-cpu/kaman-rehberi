@@ -1,0 +1,223 @@
+:root {
+    --primary: #fbbf24; /* Vurgu Rengi (Altın) */
+    --bg-dark: #0f172a; /* Gece Mavisi Arka Plan */
+    --card-bg: rgba(30, 41, 59, 0.7); /* Glassmorphism Kartlar */
+    --text-main: #f8fafc; /* Ana Yazı Rengi (Fildişi Beyazı) */
+    --text-muted: #cbd5e1; /* Yardımcı Yazı Rengi (Hafif Gri) */
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+}
+
+/* Navigasyon */
+nav {
+    position: sticky; top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.8);
+    padding: 1.2rem;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul {
+    display: flex; justify-content: center; gap: 3rem; list-style: none;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    transition: 0.4s;
+}
+
+nav a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    height: 50vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7));
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* İçerik Konteynırı */
+.container {
+    max-width: 900px; /* Çok yayılmaması için daralttık */
+    margin: -40px auto 50px;
+    padding: 0 20px;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+p { 
+    font-size: 1.05rem; 
+    line-height: 1.7; 
+    color: var(--text-muted); /* Yazı artık sarı değil, daha düzgün bir beyaz/gri */
+}
+
+/* --- GALERİ DÜZENLEMESİ (2 RESİM YAN YANA VE KÜÇÜK) --- */
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Sadece 2 sütun yapar */
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.gallery-item {
+    height: 220px; /* Boyutları küçülttük */
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+}
+.glass-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* --- TARİH SAYFASI ÖZEL DÜZENLEMELERİ --- */
+
+/* Kartların altına boşluk ekler, sayfayı ferahlatır */
+.glass-card {
+    margin-bottom: 50px; 
+}
+
+/* Resim kutusunun üst ve alt boşluğunu ayarlar */
+.img-box {
+    margin: 30px 0;
+}
+
+/* Kronolojik maddeleri kutu içine alır ve aralarını açar */
+.timeline-item {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--primary);
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+/* MOBİL DÜZENLEMELER (Ekran 768px'den küçükse) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menü elemanlarını alt alta dizer */
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Başlığı mobilde biraz küçültür */
+    }
+
+    .container {
+        margin-top: 20px; /* Üst boşluğu mobilde daraltır */
+        padding: 0 10px;
+    }
+
+    .glass-card {
+        padding: 20px; /* Kart iç boşluğunu mobilde azaltır */
+    }
+    
+    .image-gallery {
+        grid-template-columns: 1fr; /* Mobilde resimleri tek sütun yapar */
+    }
+}
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Menüyü dikey yapar */
+        gap: 1rem;
+        padding: 10px 0;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+}
+/* Gezilecek Yerler Resim Kutusu Düzenlemesi */
+.img-box {
+    width: 100%;
+    height: 350px; /* Tüm resimlerin yüksekliğini buraya sabitledik */
+    background: #1e293b;
+    border-radius: 15px;
+    margin: 25px 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* RESMİ EZMEDEN KUTUYA SIĞDIRAN KRİTİK KOMUT */
+    transition: transform 0.5s ease;
+}
+
+/* Üzerine gelince hafif büyüme efekti */
+.img-box:hover img {
+    transform: scale(1.05);
+}
+
+/* Mobil cihazlar için yükseklik ayarı (Resimler çok uzun durmasın diye) */
+@media (max-width: 768px) {
+    .img-box {
+        height: 250px;
+    }
+}
