@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://kamanubyo2026.name.tr/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <!-- Tarihçe -->
+  <url>
+    <loc>https://kamanubyo2026.name.tr/tarih.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <!-- Yemekler -->
+  <url>
+    <loc>https://kamanubyo2026.name.tr/yemekler.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <!-- Gezilecek Yerler -->
+  <url>
+    <loc>https://kamanubyo2026.name.tr/gezilecek-yerler.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>
